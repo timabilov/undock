@@ -3,6 +3,7 @@ Small in-place template processor for unpacking static code expressions
 
 
 Use this directive in your files:
+
 ####### unpack 'file' <regex>: <command>
 
 Json is supported as a source:
@@ -29,8 +30,8 @@ Json is supported as a source:
 ####### jsonunpack 'package.json' data.packages: RUN magic {name} {version}
  
 
-
 `pipunpack` is already built-in command - for pip:
+
  ####### pipunpack 'file'
  
  run `main.py Dockerfile*`
