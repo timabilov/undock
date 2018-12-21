@@ -13,6 +13,7 @@ from utils import syntax_err, readlines, fnferror, read, clear_empty_values, \
 
 logger = logging.getLogger(__name__)
 
+DEFAULT_AFFECTED_LINES_PREFIX = '#'
 
 DIRECTIVE = 'unpack'
 END_DIRECTIVE = 'end {}'.format(DIRECTIVE)
@@ -191,11 +192,10 @@ def process(conf):
 
 
 parser = ArgumentParser()
-AFFECTED_LINES_PREFIX = '#'
-parser.add_argument('-i', "--interpret", default=AFFECTED_LINES_PREFIX)
+
+parser.add_argument('-i', "--interpret", default=DEFAULT_AFFECTED_LINES_PREFIX)
 parser.add_argument('-f', "--files", nargs='*', default=glob.glob('*'))
 
-# parser.add_argument('', nargs='*', default=glob.glob('Dockerfile*'))
 args = parser.parse_args()
 
 process(args.__dict__)
