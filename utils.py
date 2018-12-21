@@ -25,11 +25,11 @@ def read(path, err_fn=None):
 
 def syntax_err(lineno, line, msg=''):
 
-    sys.exit('Bad directive syntax.\nline {}: {} \n{}'.format(lineno, line, msg))
+    sys.exit('Bad directive syntax.\nline {}: {} {}'.format(lineno + 1, line, msg))
 
 
 def fnferror(path, lineno, line):
-    sys.exit("'{}' not found.\nline {}: {}".format(path, lineno, line))
+    sys.exit("'{}' not found.\nline {}: {}".format(path, lineno + 1, line))
 
 
 def clear_empty_values(d):
