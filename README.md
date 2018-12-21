@@ -18,8 +18,9 @@ For any regex match given command will be rendered.
 `<regex>` variables can be captured by `{varname}`(reluctant/lazy .+?) or any NAMED groups. 
 This vars after used in `<command>` in the same way(environment marks ignored!):
  
-'# unpack 'requirements.txt' {line}\n : RUN pip install {line}
-'# unpack 'anyfile' abcd?[a-z]?{sometoken}; : RUN pip install {sometoken}
+`'# unpack 'requirements.txt' {line}\n : RUN pip install {line}`
+
+`'# unpack 'anyfile' abcd?[a-z]?{sometoken}; : RUN pip install {sometoken}`
 
 
 Json is supported as a source:
